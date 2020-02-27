@@ -146,4 +146,4 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
 
 # settings.py
 ALLOWED_HOSTS = ['.now.sh']
-#DATABASES = {}
+DATABASES = {}
