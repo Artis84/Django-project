@@ -1,2 +1,2 @@
 # Django-project
-Site web
+Just a django web site for learning.
