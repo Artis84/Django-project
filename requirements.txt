@@ -2,3 +2,4 @@
 Django==3.0.3
 django-crispy-forms==1.8.1
 Pillow==7.0.0
+SQLite==3.8.3
