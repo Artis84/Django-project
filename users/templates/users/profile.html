@@ -1,0 +1,75 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="container emp-profile">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="profile-img">
+                        <img src="{{ user.profile.image.url }}"
+                            alt="" />
+                        <div class="file btn btn-lg btn-primary">
+                            Changer la Photo
+                            <input type="file" name="file" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="profile-head">
+                        <h5>
+                           {{ user.username }}
+                        </h5>
+                        <h6>
+                            Web Developer and Designer
+                        </h6>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Édité le profil" />
+                </div>
+            </div>
+            <div class="row">
+                <!--<div class="col-md-4">
+                    <div class="profile-work">
+                        <p>WORK LINK</p>
+                        <a href="">Website Link</a><br />
+                        <a href="">Bootsnipp Profile</a><br />
+                        <a href="">Bootply Profile</a>
+                    </div>
+                </div>-->
+                <div class="col-md-8">
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Nom</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>Kshiti Ghelani</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label>Email</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>kshitighelani@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Information du profil</legend>
+                    {{ u_form | crispy}}
+                    {{ p_form | crispy}}
+            </fieldset>
+            <div class="form-group">
+                 <button class="btn btn-outline-info" type="submite">Sauvegarder</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
