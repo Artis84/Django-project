@@ -1,2 +1,0 @@
-# Django-project
-Site web
